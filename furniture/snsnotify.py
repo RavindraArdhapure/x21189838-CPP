@@ -1,5 +1,6 @@
 import logging
 import boto3
+import time
 from botocore.exceptions import ClientError
 
 
@@ -23,8 +24,11 @@ class Publisher:
            # recall that if the topic already exists, the create_topic() method returns that topic's ARN
            response = sns_client.create_topic(Name=topic_name)
            topic_arn = response['TopicArn']
+           # subscribe to the existing topic
+           print(my_message)
            sns_client.subscribe(TopicArn=topic_arn, Protocol='email', Endpoint=email_id)
-        
+           time.sleep(2.4)
+           # publish the message
            response = sns_client.publish(TopicArn=topic_arn, Message=my_message)    
            print(response)
             

@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate,logout,login
 from .models import *
 from datetime import date
 from furniture.snsnotify import *
-
+# import sns_publisher
 # Create your views here.
 
 def Home(request):
@@ -379,8 +379,10 @@ def payment(request,total):
         error=True
     d ={'total':total,'error':error}
     print(total)
+    # test = sns_publisher_pkg.sns_publisher.Publisher()
+    # value =  test.publish_message('customer-notification','Purchased Order Total Amount in Euro='+total,user.email)
     pub = Publisher()
-    value1=pub.publish_message('customer-notification',total,'ravindra.ardhapure@gmail.com')
+    value1=pub.publish_message('customer-notification','Purchased Order Total Amount in Euro='+total,user.email)
     print(value1)
     return render(request,'payment2.html',d)
 
