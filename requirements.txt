@@ -1,0 +1,12 @@
+astroid==2.11.3
+dill==0.3.4
+Django==2.1.15
+isort==5.10.1
+lazy-object-proxy==1.7.1
+mccabe==0.7.0
+pylint==2.13.7
+pytz==2022.1
+tomli==1.2.3
+typed-ast==1.5.3
+typing-extensions==4.1.1
+wrapt==1.14.0
