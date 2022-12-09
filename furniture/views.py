@@ -3,7 +3,8 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,logout,login
 from .models import *
 from datetime import date
-from furniture.snsnotify import *
+from library_ravindra_ardhapure_x21189838_sns_publisher import sns_publisher
+
 # import sns_publisher
 # Create your views here.
 
@@ -379,11 +380,11 @@ def payment(request,total):
         error=True
     d ={'total':total,'error':error}
     print(total)
-    # test = sns_publisher_pkg.sns_publisher.Publisher()
-    # value =  test.publish_message('customer-notification','Purchased Order Total Amount in Euro='+total,user.email)
-    pub = Publisher()
-    value1=pub.publish_message('customer-notification','Purchased Order Total Amount in Euro='+total,user.email)
-    print(value1)
+    # Used the library To Directly Publishing 
+    test =  sns_publisher.Publisher()
+    value =  test.publish_message('customer-notification','Purchased Order Total Amount in Euro='+total,request.user.email)
+    # pub = Publisher()
+    # value1=pub.publish_message('customer-notification','Purchased Order Total Amount in Euro='+total,user.email)
     return render(request,'payment2.html',d)
 
 

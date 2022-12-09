@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/ubuntu/environment/x21189838_CPP/venv"
+set -gx VIRTUAL_ENV "/home/ubuntu/environment/x21189838-CPP/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

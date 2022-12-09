@@ -1,11 +1,8 @@
 asgiref==3.5.2
 astroid==2.11.3
 attrs==22.1.0
-awsebcli==3.20.3
 bcrypt==4.0.1
 blessed==1.19.1
-boto3==1.21.3
-botocore==1.23.54
 cached-property==1.5.2
 cement==2.8.2
 certifi==2022.12.7
