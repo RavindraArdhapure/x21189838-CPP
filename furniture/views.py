@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate,logout,login
 from .models import *
 from datetime import date
 from library_ravindra_ardhapure_x21189838_sns_publisher import sns_publisher
+from furniture.s3 import *
 
 # import sns_publisher
 # Create your views here.
@@ -43,6 +44,8 @@ def Home(request):
 
 
     d = {'pro': pro, 'cat': cat,'num':num,'num1':num1}
+    value=create_bucket('x21189838-cpp_images', None)
+    print(value)
     return render(request, 'all_product.html', d)
 	
 
