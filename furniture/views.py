@@ -380,11 +380,9 @@ def payment(request,total):
         error=True
     d ={'total':total,'error':error}
     print(total)
-    # Used the library To Directly Publishing 
+    # Used the library To Directly Publishing to the subscriber
     test =  sns_publisher.Publisher()
     value =  test.publish_message('customer-notification','Purchased Order Total Amount in Euro='+total,request.user.email)
-    # pub = Publisher()
-    # value1=pub.publish_message('customer-notification','Purchased Order Total Amount in Euro='+total,user.email)
     return render(request,'payment2.html',d)
 
 
